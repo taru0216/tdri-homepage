@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Mission from '../components/Mission.astro';
+import Services from '../components/Services.astro';
+import Works from '../components/Works.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="TDRI — 樽石デジタル技術研究所合同会社"
+  description="AI と人の協働で、次のソフトウェアエンジニアリングと組織のあり方を研究・実装する独立系の研究所。"
+>
+  <Header />
+  <main>
+    <Hero />
+    <Mission />
+    <Services />
+    <Works />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

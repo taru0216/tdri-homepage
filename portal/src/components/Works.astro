@@ -1,0 +1,61 @@
+---
+// 実績 placeholder セクション
+const works = [
+  {
+    year: '2026',
+    title: '研究プロジェクト α',
+    description: '（公開できる範囲で順次更新予定）',
+  },
+  {
+    year: '2026',
+    title: '研究プロジェクト β',
+    description: '（公開できる範囲で順次更新予定）',
+  },
+  {
+    year: '2026',
+    title: '研究プロジェクト γ',
+    description: '（公開できる範囲で順次更新予定）',
+  },
+];
+---
+
+<section id="works" class="relative bg-[var(--color-bg-alt)] py-28 sm:py-36 overflow-hidden">
+  <!-- 背景の縦線アクセント -->
+  <div
+    class="absolute inset-y-0 left-1/2 w-px bg-[var(--color-border)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="max-w-3xl mb-16">
+      <p class="reveal font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--color-accent)]">
+        03 — Works
+      </p>
+      <h2
+        class="reveal reveal-delay-1 mt-4 font-display text-[clamp(1.8rem,4.2vw,3.2rem)] leading-[1.18] text-[var(--color-text)]"
+      >
+        実績は、これから刻んでいく。
+      </h2>
+      <p class="reveal reveal-delay-2 mt-4 text-base text-[var(--color-text-secondary)]">
+        TODO: 公開可能なケーススタディが揃い次第、ここに追加していきます。
+      </p>
+    </div>
+
+    <ol class="relative space-y-8">
+      {
+        works.map((w, i) => (
+          <li class={`reveal reveal-delay-${i + 1} grid grid-cols-12 gap-4 items-baseline`}>
+            <div class="col-span-3 sm:col-span-2 font-mono text-xs text-[var(--color-text-muted)]">
+              {w.year}
+            </div>
+            <div class="col-span-9 sm:col-span-10 border-b border-dashed border-[var(--color-border)] pb-6">
+              <h3 class="font-display text-lg text-[var(--color-text)]">{w.title}</h3>
+              <p class="mt-2 text-sm text-[var(--color-text-secondary)]">{w.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+:{$PORT:8080}
+
+# healthcheck (portal probe / Cloud Run probe)
+@healthz path /healthz
+handle @healthz {
+	respond "ok" 200
+}
+
+# static files
+handle {
+	root * /srv
+	file_server
+	try_files {path} /index.html
+}

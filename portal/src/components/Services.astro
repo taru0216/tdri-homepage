@@ -1,0 +1,79 @@
+---
+const services = [
+  {
+    no: '01',
+    title: 'AI エージェント経営基盤',
+    summary:
+      'C-Suite Agent Fleet による日次運営、Issue 駆動の自律実行、CL レベル管理を含む情報隔壁ガバナンスまでを一気通貫で提供する経営フレームワーク。',
+    bullets: ['Issue → 実装 → PR の自動化', '情報分類 (CL0〜CL3)', '監査証跡'],
+  },
+  {
+    no: '02',
+    title: 'ソフトウェアエンジニアリング R&D',
+    summary:
+      'クラウド・分散システム・開発者向けプロダクトの研究開発。仮説 → プロトタイプ → 検証のサイクルを短く回し、知見をフレームワークに還元する。',
+    bullets: ['静的サイト / Web アプリ', '開発者ツール', 'API / SDK 設計'],
+  },
+  {
+    no: '03',
+    title: 'コンサルティング / 研究受託',
+    summary:
+      'AI 時代の働き方・組織設計・技術選定について、第三者視点での助言と検証を提供する（受託案件は別途協議）。',
+    bullets: ['組織設計レビュー', '技術選定アドバイザリ', '少数案件のみ受付'],
+    placeholder: true,
+  },
+];
+---
+
+<section id="services" class="relative bg-[var(--color-bg)] py-28 sm:py-36">
+  <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="max-w-3xl mb-16">
+      <p class="reveal font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--color-accent)]">
+        02 — Services
+      </p>
+      <h2
+        class="reveal reveal-delay-1 mt-4 font-display text-[clamp(1.8rem,4.2vw,3.2rem)] leading-[1.18] text-[var(--color-text)]"
+      >
+        私たちが取り組む 3 つの領域。
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      {
+        services.map((s, i) => (
+          <article
+            class={`reveal reveal-delay-${i + 1} group relative flex flex-col h-full p-8 bg-[var(--color-bg-alt)] rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300`}
+          >
+            <div class="flex items-baseline justify-between mb-6">
+              <span class="font-mono text-xs tracking-wider text-[var(--color-accent)]">
+                {s.no}
+              </span>
+              {s.placeholder && (
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border border-[var(--color-border-strong)] text-[var(--color-text-muted)]">
+                  TODO
+                </span>
+              )}
+            </div>
+            <h3 class="font-display text-xl mb-4 text-[var(--color-text)] leading-snug">
+              {s.title}
+            </h3>
+            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6 flex-1">
+              {s.summary}
+            </p>
+            <ul class="space-y-2 text-xs">
+              {s.bullets.map((b) => (
+                <li class="flex items-start gap-2 text-[var(--color-text-secondary)]">
+                  <span
+                    class="inline-block w-1.5 h-1.5 mt-1.5 rounded-full bg-[var(--color-accent)]"
+                    aria-hidden="true"
+                  />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* TDRI brand tokens — 黒×白×アクセント1色 (emerald) */
+:root {
+  /* Surfaces */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F4F5F4;
+  --color-bg-ink: #0A0A0A;          /* near-black, not pure */
+  --color-bg-ink-soft: #131313;
+
+  /* Text */
+  --color-text: #0A0A0A;
+  --color-text-secondary: #444A47;
+  --color-text-muted: #8A908D;
+  --color-text-inverse: #F8F9F8;
+
+  /* Accent — emerald (独自配色: 既存 app-entreprenais-com #059669 と区別するため #0E8060) */
+  --color-accent: #0E8060;
+  --color-accent-light: #14A37C;
+  --color-accent-dim: #07382A;
+
+  /* Border */
+  --color-border: #E2E5E3;
+  --color-border-strong: #C5CAC7;
+  --color-border-ink: #1F1F1F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans JP', 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+/* Display font */
+.font-display {
+  font-family: 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* === Scroll-linked reveal animation === */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.05s; }
+.reveal-delay-2 { transition-delay: 0.12s; }
+.reveal-delay-3 { transition-delay: 0.20s; }
+.reveal-delay-4 { transition-delay: 0.28s; }
+.reveal-delay-5 { transition-delay: 0.36s; }
+.reveal-delay-6 { transition-delay: 0.44s; }
+
+/* === Parallax === */
+.parallax {
+  will-change: transform;
+}
+
+/* セクション切替時の subtle BG transition */
+section {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

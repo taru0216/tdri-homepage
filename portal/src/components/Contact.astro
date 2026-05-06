@@ -1,0 +1,60 @@
+---
+// Contact: 黒背景・大きな CTA
+---
+
+<section
+  id="contact"
+  class="relative bg-[var(--color-bg-ink)] text-[var(--color-text-inverse)] py-32 sm:py-40 overflow-hidden"
+>
+  <!-- アクセントの斜めライン -->
+  <div
+    class="parallax absolute -top-20 -right-40 w-[820px] h-[820px] rounded-full"
+    style="background: radial-gradient(circle, rgba(14,128,96,0.22) 0%, rgba(14,128,96,0.04) 50%, transparent 75%);"
+    data-parallax-speed="0.10"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-10">
+    <p class="reveal font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--color-accent-light)]">
+      04 — Contact
+    </p>
+
+    <h2
+      class="reveal reveal-delay-1 mt-6 font-display text-[clamp(2rem,5vw,4rem)] leading-[1.08] tracking-tight max-w-3xl"
+    >
+      研究や技術相談、<br />
+      お気軽にどうぞ。
+    </h2>
+
+    <p
+      class="reveal reveal-delay-2 mt-8 max-w-xl text-[var(--color-text-inverse)]/70 text-base sm:text-lg leading-relaxed"
+    >
+      共同研究・受託案件・技術相談などのお問い合わせは、以下からお願いします。
+      まずはご連絡ください。
+    </p>
+
+    <div class="reveal reveal-delay-3 mt-10 flex flex-wrap gap-4">
+      <!-- TODO: 公式メールアドレス・問い合わせフォームの URL を確定したら差し替え -->
+      <a
+        href="mailto:contact@example.invalid"
+        class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[var(--color-accent)] text-white text-sm font-bold hover:bg-[var(--color-accent-light)] transition-colors"
+      >
+        メールで問い合わせ
+        <span aria-hidden="true">→</span>
+      </a>
+      <a
+        href="https://github.com/taru0216"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/30 text-white text-sm font-bold hover:bg-white/10 transition-colors"
+      >
+        GitHub
+      </a>
+    </div>
+
+    <p class="reveal reveal-delay-4 mt-8 text-xs font-mono text-[var(--color-text-muted)]">
+      ※ contact@example.invalid は placeholder です（公式アドレス確定次第差し替え予定）。
+    </p>
+  </div>
+</section>

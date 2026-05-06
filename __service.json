@@ -1,0 +1,7 @@
+{
+  "runtime": "docker",
+  "port": 19008,
+  "healthz_path": "/healthz",
+  "label": "homepage",
+  "description": "TDRI corporate homepage (Astro + Tailwind v4)"
+}

@@ -1,0 +1,55 @@
+---
+import Logo from './Logo.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--color-bg-ink-soft)] text-[var(--color-text-inverse)] border-t border-white/5">
+  <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-10 py-12 grid grid-cols-1 md:grid-cols-12 gap-8">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-3">
+        <Logo size={36} variant="light" />
+        <div class="leading-tight">
+          <div class="font-display text-base">TDRI</div>
+          <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--color-text-muted)]">
+            Taruishi Digital Research Institute
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-[var(--color-text-inverse)]/60 max-w-md leading-relaxed">
+        樽石デジタル技術研究所合同会社。AI と人の協働を軸に、次世代のソフトウェアと
+        働き方を研究・実装します。
+      </p>
+    </div>
+
+    <div class="md:col-span-3">
+      <h4 class="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text-muted)]">
+        Sections
+      </h4>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a class="hover:text-[var(--color-accent-light)]" href="#mission">Mission</a></li>
+        <li><a class="hover:text-[var(--color-accent-light)]" href="#services">Services</a></li>
+        <li><a class="hover:text-[var(--color-accent-light)]" href="#works">Works</a></li>
+        <li><a class="hover:text-[var(--color-accent-light)]" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-4">
+      <h4 class="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text-muted)]">
+        Legal
+      </h4>
+      <ul class="mt-4 space-y-2 text-sm text-[var(--color-text-inverse)]/70">
+        <li>樽石デジタル技術研究所合同会社</li>
+        <li>所在地: 日本（詳細は要請に応じて開示）</li>
+        <li>事業年度末: 9 月 30 日</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/5">
+    <div
+      class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--color-text-muted)]"
+    >
+      <p>© {year} 樽石デジタル技術研究所合同会社. All rights reserved.</p>
+      <p class="font-mono">v0.1.0 — initial</p>
+    </div>
+  </div>
+</footer>
